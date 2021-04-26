@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace Kursovic
 {
@@ -26,16 +27,50 @@ namespace Kursovic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int index = 0;
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            textBox12.Text = "";
+            textBox13.Text = "";
+            textBox14.Text = "";
+            textBox15.Text = "";
+            Check();
+            int index;
             string SQL = "call gibddmodern.Number_Car('" + textBox1.Text + textBox2.Text +"');";
-            MySQL(SQL, index);
+            MySQL(SQL, index = 0);
+            SQL = "call gibddmodern.Wanted('" + textBox1.Text + textBox2.Text + "')";
+            MySQL(SQL, index = 1);
+        }
+
+        public void Check()
+        {
+            if (textBox1.Text == "A000AA" & textBox2.Text == "47")
+            {
+                if (textBox1.Text == "A000AA")
+                {
+                    if (textBox2.Text == "47") MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{2,3}$");
+                if(myReg.IsMatch(textBox1.Text+textBox2.Text) == false)
+                {
+                    MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         public void MySQL(string SQL, int index)
         {
             string str = "server=localhost;user=root;password=2506Russia5002;database=gibddmodern;port=3306";
             MySqlConnection connection = new MySqlConnection(str);
-
             try
             {
                 connection.Open();
@@ -72,9 +107,16 @@ namespace Kursovic
                 }
                 textBox3.Text = Sur + " " + Name + " " + MiddleName; 
             }
-
-
-
+            if(index == 1)
+            {
+                while (reader.Read())
+                {
+                    textBox12.Text = reader["DateWanted"].ToString();
+                    textBox13.Text = reader["IdCar"].ToString();
+                    textBox14.Text = reader["SpecialSigns"].ToString();
+                    textBox15.Text = reader["Causes"].ToString();
+                }
+            }
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -89,5 +131,9 @@ namespace Kursovic
             textBox1.ForeColor = System.Drawing.Color.Black;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

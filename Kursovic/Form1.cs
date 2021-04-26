@@ -18,15 +18,21 @@ namespace Kursovic
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            string Human = "", Role = "";
-            Check();
-            string SQL = "SELECT idHuman, Role FROM gibddmodern.password WHERE Login = "+textBox1.Text+" and Password = SHA1("+textBox2.Text+");";
-            MySQL(SQL, Human, Role);
+            groupBox2.Hide();
         }
 
-        public void MySQL(string SQL, string Human, string Role)
+        int index;
+        int ID = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Check(textBox1.Text,textBox2.Text);
+            string SQL = "SELECT idHuman, Role FROM gibddmodern.password WHERE Login = '"+ textBox1.Text + "' and Password = SHA1('"+ textBox2.Text + "');";
+            MySQL(SQL, index=0);
+        }
+
+        public void MySQL(string SQL,int index)
         {
             string str = "server=localhost;user=root;password=2506Russia5002;database=gibddmodern;port=3306";
             MySqlConnection connection = new MySqlConnection(str);
@@ -36,13 +42,7 @@ namespace Kursovic
                 connection.Open();
                 string sql = SQL;
                 MySqlCommand mySql = new MySqlCommand(sql, connection);
-                MySqlDataReader reader = mySql.ExecuteReader();
-                while(reader.Read())
-                {
-                    Human = reader["idHuman"].ToString();
-                    Role = reader["Role"].ToString();
-                }
-                Check(Human, Role);
+                Reader(mySql, index);
                 connection.Close();
             }
             catch (Exception ex)
@@ -51,28 +51,111 @@ namespace Kursovic
             }
         }
 
-        public void Check()
+        public void Reader(MySqlCommand mySql, int index)
         {
-           if(textBox1.Text == "" || textBox2.Text == "")
-           {
-                if(textBox1.Text == "")
+            MySqlDataReader reader = mySql.ExecuteReader();
+            if (index == 0)
+            {
+                int Human = 0; 
+                string Role = "";
+                while (reader.Read())
                 {
-                    if(textBox2.Text == "") MessageBox.Show("Не заполнены оба поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show("Не заполнено поле Login", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Human = Convert.ToInt32(reader["idHuman"]);
+                    Role = reader["Role"].ToString();
                 }
-                else MessageBox.Show("Не заполнено поле Password", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Check(Human, Role);
+            }
+            if(index == 1)
+            {
+                while (reader.Read())
+                {
+                    ID = Convert.ToInt32(reader["idDriver"]);
+                }
+                CheckMask(ID);
+            }
+            if(index == 2)
+            {
+                while (reader.Read())
+                {
+                    ID = Convert.ToInt32(reader["idEmployee"]);
+                }
+                CheckMask(ID);
+            }
+        }
+
+        public void Check(string Text1, string Text2)
+        {
+           if(Text1 == "" || Text2 == "")
+           {
+                if(Text1 == "")
+                {
+                    if(Text2 == "") MessageBox.Show("Не заполнены оба поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    else MessageBox.Show("Не заполнено первое поле", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else MessageBox.Show("Не заполнено второе поле", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
            }
         }
 
-        public void Check(string Human, string Role)
+        public void Check(int Human, string Role)
         {
-            if(Human == "") MessageBox.Show("Запись не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if(Human != "" & Role != "")
+            if(Human == 0) MessageBox.Show("Запись не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(Human != 0 & Role != "")
             {
-                Form form2 = new Form2();
-                form2.Show();
-                this.Hide();
+                if(Role == "Сотрудник")
+                {
+                    Form form2 = new Form2();
+                    form2.Show();
+                    this.Hide();
+                }    
+                if(Role == "Водитель")
+                {
+                    Form form3 = new Form3();
+                    form3.Show();
+                    this.Hide();
+                }    
             }
+        }
+
+        public void CheckMask(int ID)
+        {
+            if(ID == 0) MessageBox.Show("Запись не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else panel2.Show();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            index = 1;
+            string SQL = "SELECT idDriver FROM gibddmodern.drivers WHERE PassportData = "+maskedTextBox1.Text+";";
+            MySQL(SQL, index);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            index = 2;
+            string SQL = "SELECT idEmployee FROM gibddmodern.employees WHERE PassportData = " + maskedTextBox1.Text + ";";
+            MySQL(SQL, index);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(index == 1)
+            {
+                Check(textBox3.Text, textBox4.Text);
+                string SQL = "INSERT INTO gibddmodern.password (idHuman, Role, Login, Password) VALUES ('" + ID + "','Водитель','" + textBox3.Text + "',SHA1('" + textBox4.Text + "'));";
+                MySQL(SQL, index = 4);
+            }
+            if (index == 2)
+            {
+                Check(textBox3.Text, textBox4.Text);
+                string SQL = "INSERT INTO gibddmodern.password (idHuman, Role, Login, Password) VALUES ('" + ID + "','Сотрудник','" + textBox3.Text + "',SHA1('" + textBox4.Text + "'));";
+                MySQL(SQL, index = 4);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            groupBox2.Show();
+            panel2.Hide();
         }
     }
 }
