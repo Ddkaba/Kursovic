@@ -32,54 +32,37 @@ namespace Kursovic
             MySQL(SQL, index=0);
         }
 
-        public void MySQL(string SQL,int index)
+        public void MySQL(string SQL, int index)
         {
-            string str = "server=localhost;user=root;password=2506Russia5002;database=gibddmodern;port=3306";
-            MySqlConnection connection = new MySqlConnection(str);
-
-            try
+            Connector NEW = new Connector();
+            NEW.SQL(SQL);
+            MySqlDataReader reader = NEW.reader1();
+            switch(index)
             {
-                connection.Open();
-                string sql = SQL;
-                MySqlCommand mySql = new MySqlCommand(sql, connection);
-                Reader(mySql, index);
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        public void Reader(MySqlCommand mySql, int index)
-        {
-            MySqlDataReader reader = mySql.ExecuteReader();
-            if (index == 0)
-            {
-                int Human = 0; 
-                string Role = "";
-                while (reader.Read())
-                {
-                    Human = Convert.ToInt32(reader["idHuman"]);
-                    Role = reader["Role"].ToString();
-                }
-                Check(Human, Role);
-            }
-            if(index == 1)
-            {
-                while (reader.Read())
-                {
-                    ID = Convert.ToInt32(reader["idDriver"]);
-                }
-                CheckMask(ID);
-            }
-            if(index == 2)
-            {
-                while (reader.Read())
-                {
-                    ID = Convert.ToInt32(reader["idEmployee"]);
-                }
-                CheckMask(ID);
+                case 0:
+                    int Human = 0;
+                    string Role = "";
+                    while (reader.Read())
+                    {
+                        Human = Convert.ToInt32(reader["idHuman"]);
+                        Role = reader["Role"].ToString();
+                    }
+                    Check(Human, Role);
+                    break;
+                case 1:
+                    while (reader.Read())
+                    {
+                        ID = Convert.ToInt32(reader["idDriver"]);
+                    }
+                    CheckMask(ID);
+                    break;
+                case 2:
+                    while (reader.Read())
+                    {
+                        ID = Convert.ToInt32(reader["idEmployee"]);
+                    }
+                    CheckMask(ID);
+                    break;
             }
         }
 

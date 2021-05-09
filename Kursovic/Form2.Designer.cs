@@ -62,10 +62,29 @@ namespace Kursovic
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -102,7 +121,7 @@ namespace Kursovic
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(615, 493);
+            this.button1.Location = new System.Drawing.Point(597, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 40);
             this.button1.TabIndex = 4;
@@ -275,6 +294,7 @@ namespace Kursovic
             // 
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.textBox15);
@@ -381,16 +401,296 @@ namespace Kursovic
             this.panel1.Size = new System.Drawing.Size(505, 150);
             this.panel1.TabIndex = 6;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(523, 10);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(127, 21);
+            this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Проверка авто";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(523, 37);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(93, 21);
+            this.radioButton2.TabIndex = 8;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Протокол";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.textBox17);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.maskedTextBox1);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Location = new System.Drawing.Point(12, 168);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(776, 328);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Написание протокола";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(656, 282);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 40);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(223, 94);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(167, 22);
+            this.textBox17.TabIndex = 12;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(220, 74);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(170, 17);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Место правонарушения:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(195, 17);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Описание правонарушения:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 74);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(163, 17);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Дата правонарушения:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(9, 94);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(396, 25);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 17);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Статья:";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(9, 140);
+            this.textBox16.Multiline = true;
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(197, 102);
+            this.textBox16.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "12.1.ч.1",
+            "12.1.ч.1.1",
+            "12.1.ч.2",
+            "12.10.ч.1",
+            "12.10.ч.2",
+            "12.10.ч.3",
+            "12.11.ч.1",
+            "12.11.ч.2",
+            "12.11.ч.3",
+            "12.12.ч.1",
+            "12.12.ч.2",
+            "12.12.ч.3",
+            "12.13.ч.1",
+            "12.13.ч.2",
+            "12.14.ч.1",
+            "12.14.ч.1.1",
+            "12.14.ч.2",
+            "12.14.ч.3",
+            "12.15.ч.1",
+            "12.15.ч.1.1",
+            "12.15.ч.2",
+            "12.15.ч.3",
+            "12.15.ч.4",
+            "12.15.ч.5",
+            "12.16.ч.1",
+            "12.16.ч.2",
+            "12.16.ч.3",
+            "12.16.ч.3.1",
+            "12.16.ч.4",
+            "12.16.ч.5",
+            "12.16.ч.6",
+            "12.16.ч.7",
+            "12.17.ч.1",
+            "12.17.ч.1.1",
+            "12.17.ч.1.2",
+            "12.17.ч.2",
+            "12.18",
+            "12.19.ч.1",
+            "12.19.ч.2",
+            "12.19.ч.3",
+            "12.19.ч.3.1",
+            "12.19.ч.3.2",
+            "12.19.ч.4",
+            "12.19.ч.5",
+            "12.19.ч.6",
+            "12.2.ч.1",
+            "12.2.ч.2",
+            "12.2.ч.3",
+            "12.2.ч.4",
+            "12.20",
+            "12.21",
+            "12.22",
+            "12.23.ч.1",
+            "12.23.ч.2",
+            "12.23.ч.3",
+            "12.23.ч.5",
+            "12.24.ч.1",
+            "12.24.ч.2",
+            "12.26.ч.1",
+            "12.26.ч.2",
+            "12.27.ч.1",
+            "12.27.ч.2",
+            "12.27.ч.3",
+            "12.28.ч.1",
+            "12.28.ч.2",
+            "12.3.ч.1",
+            "12.3.ч.2",
+            "12.3.ч.2.1",
+            "12.3.ч.3",
+            "12.33",
+            "12.35",
+            "12.36",
+            "12.37.ч.1",
+            "12.37.ч.2",
+            "12.4.ч.1",
+            "12.4.ч.2",
+            "12.4.ч.3",
+            "12.5.ч.1",
+            "12.5.ч.2",
+            "12.5.ч.3",
+            "12.5.ч.3.1",
+            "12.5.ч.4",
+            "12.5.ч.4.1",
+            "12.5.ч.5",
+            "12.5.ч.6",
+            "12.5.ч.7",
+            "12.6",
+            "12.7.ч.1",
+            "12.7.ч.2",
+            "12.7.ч.3",
+            "12.8.ч.1",
+            "12.8.ч.2",
+            "12.8.ч.3",
+            "12.9.ч.2",
+            "12.9.ч.3",
+            "12.9.ч.4",
+            "12.9.ч.5",
+            "12.9.ч.6",
+            "12.9.ч.7"});
+            this.comboBox1.Location = new System.Drawing.Point(396, 45);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(212, 24);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(207, 45);
+            this.maskedTextBox1.Mask = "000000000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(183, 22);
+            this.maskedTextBox1.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(204, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 17);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Номер вод.удостоверения:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(185, 17);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Номер значка сотрудника:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(9, 45);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(182, 22);
+            this.textBox11.TabIndex = 0;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(523, 64);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(157, 21);
+            this.radioButton3.TabIndex = 10;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Проверка штрафов";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(690, 123);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 39);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 545);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "Form2";
             this.Text = "Check Auto";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -401,7 +701,10 @@ namespace Kursovic
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -439,5 +742,23 @@ namespace Kursovic
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button button3;
     }
 }
