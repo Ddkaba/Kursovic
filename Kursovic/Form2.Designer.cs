@@ -32,7 +32,6 @@ namespace Kursovic
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace Kursovic
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,9 +59,9 @@ namespace Kursovic
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -79,7 +79,6 @@ namespace Kursovic
             this.label10 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,21 +105,11 @@ namespace Kursovic
             this.label1.TabIndex = 1;
             this.label1.Text = "Номерной знак:";
             // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(372, 34);
-            this.textBox2.MaxLength = 3;
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 59);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = " 47";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(597, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 40);
@@ -292,6 +281,7 @@ namespace Kursovic
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.button1);
@@ -300,7 +290,6 @@ namespace Kursovic
             this.groupBox2.Controls.Add(this.textBox15);
             this.groupBox2.Controls.Add(this.textBox14);
             this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox12);
             this.groupBox2.Location = new System.Drawing.Point(12, 296);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(776, 181);
@@ -308,10 +297,18 @@ namespace Kursovic
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Информация о розыске:";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Enabled = false;
+            this.dateTimePicker2.Location = new System.Drawing.Point(9, 47);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(168, 22);
+            this.dateTimePicker2.TabIndex = 10;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(224, 27);
+            this.label14.Location = new System.Drawing.Point(288, 27);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 17);
             this.label14.TabIndex = 9;
@@ -329,7 +326,7 @@ namespace Kursovic
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(118, 27);
+            this.label12.Location = new System.Drawing.Point(180, 27);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 17);
             this.label12.TabIndex = 7;
@@ -346,7 +343,7 @@ namespace Kursovic
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(227, 47);
+            this.textBox15.Location = new System.Drawing.Point(289, 47);
             this.textBox15.Name = "textBox15";
             this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(167, 22);
@@ -363,19 +360,11 @@ namespace Kursovic
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(121, 47);
+            this.textBox13.Location = new System.Drawing.Point(183, 47);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(100, 22);
             this.textBox13.TabIndex = 2;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(9, 47);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(80, 22);
-            this.textBox12.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -387,19 +376,34 @@ namespace Kursovic
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(326, 83);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "А000АА";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(505, 150);
             this.panel1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(366, 34);
+            this.textBox2.MaxLength = 3;
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 59);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "00";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // radioButton1
             // 
@@ -416,12 +420,12 @@ namespace Kursovic
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(523, 37);
+            this.radioButton2.Location = new System.Drawing.Point(523, 64);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 21);
+            this.radioButton2.Size = new System.Drawing.Size(176, 21);
             this.radioButton2.TabIndex = 8;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Протокол";
+            this.radioButton2.Text = "Написание протокола";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -494,9 +498,12 @@ namespace Kursovic
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(9, 94);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2021, 5, 10, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2021, 5, 10, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 5, 10, 0, 0, 0, 0);
             // 
             // label16
             // 
@@ -659,40 +666,30 @@ namespace Kursovic
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(523, 64);
+            this.radioButton3.Location = new System.Drawing.Point(523, 37);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(157, 21);
-            this.radioButton3.TabIndex = 10;
+            this.radioButton3.TabIndex = 12;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Проверка штрафов";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(690, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 39);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 545);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(800, 505);
             this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Name = "Form2";
-            this.Text = "Check Auto";
+            this.Text = "Проверка автомобиля";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -712,7 +709,6 @@ namespace Kursovic
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
@@ -739,7 +735,6 @@ namespace Kursovic
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -759,6 +754,7 @@ namespace Kursovic
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

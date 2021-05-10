@@ -30,13 +30,13 @@ namespace Kursovic
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            textBox1.Text = string.Empty;
             textBox1.ForeColor = System.Drawing.Color.Black;
         }
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
+            textBox2.Text = string.Empty;
             textBox2.ForeColor = System.Drawing.Color.Black;
         }
 
@@ -53,27 +53,39 @@ namespace Kursovic
             groupBox3.Show();
         }
 
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton3.Checked)
+            {
+                Form form = new Form3();
+                form.Show();
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox7.Text = "";
-            textBox8.Text = "";
-            textBox9.Text = "";
-            textBox10.Text = "";
-            textBox12.Text = "";
-            textBox13.Text = "";
-            textBox14.Text = "";
-            textBox15.Text = "";
+            textBox4.Text = string.Empty;
+            textBox5.Text = string.Empty;
+            textBox6.Text = string.Empty;
+            textBox7.Text = string.Empty;
+            textBox8.Text = string.Empty;
+            textBox9.Text = string.Empty;
+            textBox10.Text = string.Empty;
+            textBox13.Text = string.Empty;
+            textBox14.Text = string.Empty;
+            textBox15.Text = string.Empty;
+            dateTimePicker2.Text = string.Empty;
             bool check = Check();
             if(check == true)
             {
-                int index;
                 SQL = "call gibddmodern.Number_Car('" + textBox1.Text + textBox2.Text + "');";
-                MySQL(SQL, index = 0);
+                MySQL(SQL, 0);
+                if (textBox3.Text == "  ") MessageBox.Show("Запись не обнаружена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("Поиск завершен", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SQL = "call gibddmodern.Wanted('" + textBox1.Text + textBox2.Text + "')";
-                MySQL(SQL, index = 1);
+                MySQL(SQL, 1);
+                if(textBox15.Text == "") MessageBox.Show("Автомобиль не находится в розыске", "Розыск", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Автомобиль находится в розыске", "Розыск", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -84,8 +96,7 @@ namespace Kursovic
             {
                 if (textBox11.TextLength != 0)
                 {
-                    if (string.IsNullOrEmpty(maskedTextBox1.Text)) MessageBox.Show("Не заполнено поле номер вод.удостоверения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else
+                    if (maskedTextBox1.MaskCompleted)
                     {
                         if (comboBox1.SelectedIndex > -1)
                         {
@@ -107,50 +118,40 @@ namespace Kursovic
                                     Count = Count + 1;
                                     SQL = "INSERT INTO gibddmodern.protocols VALUES(" + Count + "," + Number + ",'" + Stat + "'," + IDC + "," + IDD + ",'" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + Place + "','" + Description + "')";
                                     MySQL(SQL, 5);
+                                    MessageBox.Show("Запись успешно добавлена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else MessageBox.Show("Не заполнено поле описания правонарушения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else MessageBox.Show("Не заполнено поле место правонарушения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else MessageBox.Show("Не выбрана статья правонарушения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    } 
+                    }
+                    else MessageBox.Show("Не заполнено поле номер вод.удостоверения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else MessageBox.Show("Не заполнено поле номер значка сотрудника", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public bool Check() //Для проверки заполненности полей
         {
-            Form form = new Form4();
-            form.Show();
-            this.Hide();
-        }
-
-        public bool Check()
-        {
-            if (textBox1.Text == "A000AA" & textBox2.Text == "47")
+            if (textBox1.Text == "А000АА" && textBox2.Text == "00")
             {
-                if (textBox1.Text == "A000AA")
+                if (textBox2.Text == "00")
                 {
-                    if (textBox2.Text == "47") { MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
-                    else { MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    if (textBox1.Text == "A000AA") { MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    else {MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 }
-                else { MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                else { MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             }
             else
             {
-                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{2,3}$");
-                if(myReg.IsMatch(textBox1.Text+textBox2.Text) == false)
-                {
-                    MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{1}[1-9]{1,2}$");
+                if(myReg.IsMatch(textBox1.Text+textBox2.Text) == false) { MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false;}
             }
             return true;
         }
 
-
-        public void MySQL(string SQL, int index)
+        public void MySQL(string SQL, int index) //Для выполнения запросов
         {
             Connector NEW = new Connector();
             NEW.SQL(SQL);
@@ -177,34 +178,25 @@ namespace Kursovic
                 case 1:
                     while(reader.Read())
                     {
-                        textBox12.Text = reader["DateWanted"].ToString();
+                        dateTimePicker2.Value = Convert.ToDateTime(reader["DateWanted"]);
                         textBox13.Text = reader["IdCar"].ToString();
                         textBox14.Text = reader["SpecialSigns"].ToString();
                         textBox15.Text = reader["Causes"].ToString();
                     }
                     break;
                 case 2:
-                    while(reader.Read())
-                    {
-                        Count = Convert.ToInt32(reader["COUNT(*)"]);
-                    }
+                    while(reader.Read()) Count = Convert.ToInt32(reader["COUNT(*)"]);
                     break;
                 case 3:
-                    while(reader.Read())
-                    {
-                        IDD = Convert.ToInt32(reader["IdDriver"]);
-                    }
+                    while(reader.Read()) IDD = Convert.ToInt32(reader["IdDriver"]);
                     break;
                 case 4:
-                    while(reader.Read())
-                    {
-                        IDC = Convert.ToInt32(reader["IdCar"]);
-                    }
+                    while(reader.Read()) IDC = Convert.ToInt32(reader["IdCar"]);
                     break;
             }
         }
 
-        public void Hiden()
+        public void Hiden() 
         {
             groupBox1.Hide();
             groupBox2.Hide();

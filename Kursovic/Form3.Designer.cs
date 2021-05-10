@@ -319,7 +319,8 @@ namespace Kursovic
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 59);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = " 47";
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "00";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox1
@@ -332,6 +333,7 @@ namespace Kursovic
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(326, 83);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "А000АА";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
@@ -365,7 +367,7 @@ namespace Kursovic
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
-            this.Text = "Found Fine";
+            this.Text = "Поиск штрафов";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -20,8 +20,8 @@ namespace Kursovic
             InitializeComponent();
         }
 
-        int Count, Counter,DownCounter, index;
-        string SQL;
+        int Count, Counter, index;
+        string SQL, PN;
         private void Form3_Load(object sender, EventArgs e)
         {
             textBox1.ForeColor = System.Drawing.Color.Gray;
@@ -32,23 +32,47 @@ namespace Kursovic
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button2.Enabled = true;
-            Masked();
-            Check();
-            Clear();
-            SQL = "SELECT COUNT(*) FROM protocols Where idCar = (Select idCar FROM gibddmodern.cars Where Number = '" + textBox1.Text + textBox2.Text + "' and PassportNumber = '" + maskedTextBox1.Text + "');";
-            MySQL(SQL, 1);
-            if(Count == 1)
+            button2.Enabled = false;
+            button3.Enabled = false;
+            bool check = Check();
+            if (check == true)
             {
-                SQL = "call gibddmodern.Found_Fine('" + textBox1.Text + textBox2.Text + "','" + maskedTextBox1.Text + "');";
-                MySQL(SQL, index = 0);
-            }
-            if(Count > 1)
-            {
-                button2.Enabled = true;
-                SQL = "call gibddmodern.FineLimit(0,1,'" + textBox1.Text + textBox2.Text + "','" + maskedTextBox1.Text + "');";
-                MySQL(SQL, 0);
-                Counter = 0;
+                bool mask = Masked();
+                if (mask == true)
+                {
+                    Clear();
+                    SQL = "SELECT PassportNumber FROM gibddmodern.cars WHERE Number = '" + textBox1.Text + textBox2.Text + "';";
+                    MySQL(SQL, 2);
+                    if(PN == maskedTextBox1.Text)
+                    {
+                        SQL = "SELECT COUNT(*) FROM protocols Where idCar = (Select idCar FROM gibddmodern.cars Where Number = '" + textBox1.Text + textBox2.Text + "' and PassportNumber = '" + maskedTextBox1.Text + "');";
+                        MySQL(SQL, 1);
+                        if (textBox10.Text == "0")
+                        {
+                            MessageBox.Show("Штрафы не обнаружены", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Были обнаружены штрафы", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (Count == 1)
+                            {
+                                SQL = "call gibddmodern.Found_Fine('" + textBox1.Text + textBox2.Text + "','" + maskedTextBox1.Text + "');";
+                                MySQL(SQL, index = 0);
+                            }
+                            if (Count > 1)
+                            {
+                                button2.Enabled = true;
+                                SQL = "call gibddmodern.FineLimit(0,1,'" + textBox1.Text + textBox2.Text + "','" + maskedTextBox1.Text + "');";
+                                MySQL(SQL, 0);
+                                Counter = 0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Машина с таким СТС и Номером не обнаружена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
@@ -92,7 +116,7 @@ namespace Kursovic
             textBox2.ForeColor = System.Drawing.Color.Black;
         }
 
-        public void MySQL(string SQL, int index)
+        public void MySQL(string SQL, int index) //Метод для выполнения запросов
         {
             Connector NEW = new Connector();
             NEW.SQL(SQL);
@@ -123,10 +147,16 @@ namespace Kursovic
                         textBox10.Text = Count.ToString();
                     }
                     break;
+                case 2:
+                    while(reader.Read())
+                    {
+                        PN = reader["PassportNumber"].ToString();
+                    }
+                    break;
             }
         }
 
-        public void Clear()
+        public void Clear() //Очистка всех полей
         {
             textBox3.Text = string.Empty;
             textBox4.Text = string.Empty;
@@ -135,48 +165,30 @@ namespace Kursovic
             textBox7.Text = string.Empty;
             textBox8.Text = string.Empty;
             textBox9.Text = string.Empty;
+            textBox10.Text = string.Empty;
         }
 
-        public bool Masked()
+        public bool Masked() //Проверка заполненности maskedtextbox1
         {
-            if(maskedTextBox1.Text == "")
-            {
-                MessageBox.Show("Не заполнено поле СТС", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false;
-            }
-            return true;
+            if(maskedTextBox1.MaskCompleted) return true;
+            else { MessageBox.Show("Не заполнено поле СТС", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
         }
 
-        public bool Check()
+        public bool Check() //Проверка заполненности Панели с номером
         {
-            if (textBox1.Text == "A000AA" & textBox2.Text == " 47")
+            if (textBox1.Text == "А000АА" && textBox2.Text == "00")
             {
-                if (textBox1.Text == "А000АА")
+                if (textBox2.Text == "00")
                 {
-                    if (textBox2.Text == " 47") 
-                    { 
-                        MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                        return false; 
-                    }
-                    else 
-                    { 
-                        MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                        return false;
-                    } 
+                    if (textBox1.Text == "A000AA") { MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    else { MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 }
-                else 
-                { 
-                    MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                    return false; 
-                }
+                else { MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             }
             else
             {
-                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{2,3}$");
-                if (myReg.IsMatch(textBox1.Text + textBox2.Text) == false)
-                {
-                    MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{1}[1-9]{1,2}$");
+                if (myReg.IsMatch(textBox1.Text + textBox2.Text) == false) { MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             }
             return true;
         }

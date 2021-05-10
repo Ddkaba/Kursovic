@@ -26,53 +26,31 @@ namespace Kursovic
         private void Form4_Load(object sender, EventArgs e)
         {
             Hiden();
-
             textBox1.ForeColor = System.Drawing.Color.Gray;
             textBox2.ForeColor = System.Drawing.Color.Gray;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) //Сотрудники
-        {
-            Shower();
-            Hiden();
-            Cleaner();
-            panel6.Show();
-            No_Checked();
-        }
-
         private void radioButton2_CheckedChanged(object sender, EventArgs e) //Водители
         {
-            Hiden();
-            Shower();
-            Cleaner();
-            panel6.Show();
-            No_Checked();
+            Metod();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e) //Автомобили
         {
-            Cleaner();
             Hiden();
-            panel6.Show();
+            Cleaner();
             No_Checked();
+            panel6.Show();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e) //Штрафстоянка
         {
-            Hiden();
-            Shower();
-            Cleaner();
-            panel6.Show();
-            No_Checked();
+            Metod();
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e) //Хранение номеров
         {
-            Hiden();
-            Shower();
-            Cleaner();
-            panel6.Show();
-            No_Checked();
+            Metod();
         }
 
         private void textBox1_Click_1(object sender, EventArgs e) //Номерной знак
@@ -95,11 +73,13 @@ namespace Kursovic
                 panel7.Show();
                 panel8.Show();
                 button5.Hide();
+                label34.Hide();
                 label35.Hide();
                 textBox19.Hide();
-                label34.Hide();
+                radioButton13.Hide();
                 dateTimePicker9.Hide();
                 button4.Text = "Добавить";
+                button4.Enabled = true;
                 textBox15.Enabled = true;
                 textBox16.Enabled = true;
                 textBox17.Enabled = true;
@@ -110,15 +90,15 @@ namespace Kursovic
                 dateTimePicker8.Enabled = true;
 
             }
-            if(radioButton3.Checked) //Переключатель для добавления машин на учет
+            if (radioButton3.Checked) //Переключатель для добавления машин на учет
             {
                 panel1.Show();
                 panel4.Show();
                 button3.Hide();
-                label24.Show();
                 label22.Hide();
-                dateTimePicker4.Hide();
+                label24.Show();
                 maskedTextBox4.Show();
+                dateTimePicker4.Hide();
                 textBox8.Enabled = true;
                 textBox9.Enabled = true;
                 textBox10.Enabled = true;
@@ -136,34 +116,34 @@ namespace Kursovic
                 dateTimePicker5.Enabled = true;
                 button16.Text = "Добавить";
             }
-            if(radioButton4.Checked) //Переключатель для добавления машин на штрафстоянку
+            if (radioButton4.Checked) //Переключатель для добавления машин на штрафстоянку
             {
                 panel1.Show();
                 panel3.Show();
+                button1.Hide();
                 button12.Enabled = true;
                 textBox6.Enabled = true;
                 textBox7.Enabled = true;
                 dateTimePicker2.Enabled = true;
-                button1.Hide();
                 button12.Text = "Добавить";
             }
-            if(radioButton5.Checked) //Переключатель для добавления новых хранимых номеров
+            if (radioButton5.Checked) //Переключатель для добавления новых хранимых номеров
             {
                 panel1.Show();
                 panel2.Show();
+                label23.Hide();
+                label25.Show();
+                button2.Hide();
+                maskedTextBox5.Show();
+                dateTimePicker6.Hide();
+                button7.Enabled = true;
+                button2.Enabled = true;
                 textBox3.Enabled = true;
                 textBox4.Enabled = true;
                 textBox5.Enabled = true;
                 dateTimePicker1.Enabled = true;
                 dateTimePicker6.Enabled = true;
-                label23.Hide();
-                label25.Show();
-                maskedTextBox5.Show();
-                dateTimePicker6.Hide();
-                button2.Hide();
                 button7.Text = "Добавить";
-                button7.Enabled = true;
-                button2.Enabled = true;
             }
         }
 
@@ -172,6 +152,34 @@ namespace Kursovic
             Cleaner();
             textBox1.ForeColor = System.Drawing.Color.Black;
             textBox2.ForeColor = System.Drawing.Color.Black;
+            if (radioButton2.Checked)
+            {
+                panel7.Show();
+                panel8.Hide();
+                button5.Hide();
+                label34.Show();
+                label35.Show();
+                textBox19.Show();
+                radioButton13.Hide();
+                dateTimePicker9.Show();
+                button4.Enabled = false;
+                button4.Text = "Удалить";
+                textBox15.Enabled = true;
+                textBox16.Enabled = true;
+                textBox17.Enabled = true;
+                textBox18.Enabled = false;
+                textBox19.Enabled = false;
+                maskedTextBox7.Enabled = true;
+                maskedTextBox6.Enabled = false;
+                dateTimePicker7.Enabled = false;
+                dateTimePicker8.Enabled = false;
+                dateTimePicker9.Enabled = false;
+                RadioButton radio = sender as RadioButton;
+                if(radio != null)
+                {
+                    if (radio.Checked) MessageBox.Show("Заполните ФИО и Номер вод. удостоверения для поиск нужной записи", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             if (radioButton3.Checked)
             {
                 panel1.Show();
@@ -197,20 +205,20 @@ namespace Kursovic
                 dateTimePicker4.Enabled = false;
                 dateTimePicker5.Enabled = false;
             }
-            if(radioButton4.Checked)
+            if (radioButton4.Checked)
             {
                 panel1.Show();
                 panel3.Show();
+                button1.Hide();
                 textBox6.Enabled = true;
                 button12.Enabled = true;
                 textBox7.Enabled = false;
                 dateTimePicker2.Enabled = false;
-                button1.Hide();
                 button12.Text = "Удалить";
             }
         }
 
-        private void radioButton14_CheckedChanged(object sender, EventArgs e) 
+        private void radioButton14_CheckedChanged(object sender, EventArgs e)
         {
             Cleaner();
             Counter = 0;
@@ -220,18 +228,18 @@ namespace Kursovic
             {
                 panel1.Show();
                 panel2.Show();
+                label23.Show();
+                label25.Hide();
+                button2.Show();
+                maskedTextBox5.Hide();
+                dateTimePicker6.Show();
+                button2.Enabled = true;
+                button7.Enabled = true;
                 textBox3.Enabled = false;
                 textBox4.Enabled = false;
                 textBox5.Enabled = false;
                 dateTimePicker1.Enabled = false;
                 dateTimePicker6.Enabled = false;
-                button7.Enabled = true;
-                button2.Enabled = true;
-                label23.Show();
-                label25.Hide();
-                maskedTextBox5.Hide();
-                dateTimePicker6.Show();
-                button2.Show();
                 button7.Text = "Вперед";
                 SQL = "SELECT COUNT(*) FROM gibddmodern.storingnumbers;";
                 MySQL(SQL, 0);
@@ -282,8 +290,8 @@ namespace Kursovic
                 button3.Show();
                 label24.Hide();
                 label22.Show();
-                dateTimePicker4.Show();
                 maskedTextBox4.Hide();
+                dateTimePicker4.Show();
                 button16.Text = "Вперед";
                 textBox8.Enabled = false;
                 textBox9.Enabled = false;
@@ -316,13 +324,15 @@ namespace Kursovic
             }
             if(radioButton2.Checked) //Переключатель для просмотра водителей с правами
             {
-                button5.Show();
                 panel7.Show();
                 panel8.Hide();
-                label35.Show();
-                textBox19.Show();
                 label34.Show();
+                label35.Show();
+                button5.Show();
+                textBox19.Show();
+                radioButton13.Show();
                 dateTimePicker9.Show();
+                button4.Text = "Вперед";
                 textBox15.Enabled = false;
                 textBox16.Enabled = false;
                 textBox17.Enabled = false;
@@ -336,7 +346,7 @@ namespace Kursovic
                 SQL = "SELECT COUNT(*) FROM gibddmodern.drivers;";
                 MySQL(SQL, 0);
                 Counter++;
-                SQL = "SELECT Surname, gibddmodern.drivers.Name, MiddleName, DateofBirth, PlaceofBirth, PassportData, DriverIsLicenseNumber, DateofIssueLicense, EndDateLicense, gibddmodern.category.Name AS Category FROM(gibddmodern.categorydriver INNER JOIN gibddmodern.category ON gibddmodern.categorydriver.IdCategory = gibddmodern.category.idCategory) INNER JOIN gibddmodern.drivers ON gibddmodern.categorydriver.idDriver = gibddmodern.drivers.idDriver WHERE gibddmodern.drivers.idDriver = "+Counter+"; ";
+                SQL = "SELECT Surname, gibddmodern.drivers.Name, MiddleName, DateofBirth, PlaceofBirth, PassportData, DriverIsLicenseNumber, DateofIssueLicense, EndDateLicense, gibddmodern.category.Name AS Category FROM(gibddmodern.categorydriver INNER JOIN gibddmodern.category ON gibddmodern.categorydriver.IdCategory = gibddmodern.category.idCategory) INNER JOIN gibddmodern.drivers ON gibddmodern.categorydriver.idDriver = gibddmodern.drivers.idDriver WHERE gibddmodern.drivers.idDriver = " + Counter+"; ";
                 button5.Enabled = false;
                 if (Count == 1)
                 {
@@ -347,6 +357,7 @@ namespace Kursovic
                 {
                     MySQL(SQL, 9);
                     Counter = 1;
+                    button4.Enabled = true;
                 }
             }
         }
@@ -361,10 +372,10 @@ namespace Kursovic
                 panel1.Show();
                 panel4.Show();
                 button3.Hide();
-                label24.Show();
                 label22.Show();
-                dateTimePicker4.Show();
+                label24.Show();
                 maskedTextBox4.Show();
+                dateTimePicker4.Show();
                 textBox8.Enabled = false;
                 textBox9.Enabled = false;
                 textBox10.Enabled = false;
@@ -445,9 +456,26 @@ namespace Kursovic
                     ADD_Categores();
                     foreach(int i in Categores)
                     {
-                        SQL = "INSERT INTO gibddmodern.categorydriver VALUES('" + Count + "', '"+Categores[i]+"')";
+                        SQL = "INSERT INTO gibddmodern.categorydriver VALUES('" + Count + "', '"+i+"')";
                         MySQL(SQL, 20);
                     }
+                    Cleaner();
+                    MessageBox.Show("Запись успешно добавлена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            if(radioButton12.Checked)
+            {
+                DialogResult result = MessageBox.Show("Вы точно хотите удалить запись?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    SQL = "SELECT idDriver AS IdDriver FROM gibddmodern.drivers WHERE DriverIsLicenseNumber = '"+maskedTextBox7.Text+"';";
+                    MySQL(SQL, 1);
+                    SQL = "DELETE FROM gibddmodern.categorydriver WHERE idDriver = '"+IDD+"';";
+                    MySQL(SQL, 20);
+                    SQL = "DELETE FROM gibddmodern.drivers WHERE idDriver = '" + IDD + "';";
+                    MySQL(SQL, 20);
+                    MessageBox.Show("Запись успешно удалена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cleaner();
                 }
             }
             if (radioButton14.Checked)
@@ -469,6 +497,7 @@ namespace Kursovic
         {
             if (radioButton14.Checked)
             {
+                textBox19.Text = string.Empty;
                 button4.Enabled = true;
                 Counter--;
                 if (Counter >= 1)
@@ -501,6 +530,7 @@ namespace Kursovic
                     MySQL(SQL, 20);
                     SQL = "INSERT INTO gibddmodern.storingnumbers VALUES (" + Count + ",'" + textBox1.Text + textBox2.Text + "', "+IDD+ ", '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', DATE_ADD('"+ dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',INTERVAL 1 YEAR));";
                     MySQL(SQL, 20);
+                    Cleaner();
                     MessageBox.Show("Запись успешно добавлена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else MessageBox.Show("Error");
@@ -532,12 +562,10 @@ namespace Kursovic
                     Count = Count + 1;
                     SQL = "INSERT INTO gibddmodern.parkingfine VALUES ('"+Count+ "', (SELECT idCar FROM gibddmodern.cars WHERE Number = '"+textBox1.Text+textBox2.Text+"'), '"+textBox6.Text+ "', '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', '"+textBox7.Text+"');";
                     MySQL(SQL, 20);
+                    Cleaner();
                     MessageBox.Show("Запись успешно добавлена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    MessageBox.Show("Автомобиль уже находиться на штрафстоянке", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                else MessageBox.Show("Автомобиль уже находиться на штрафстоянке", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if(radioButton14.Checked)
             {
@@ -577,10 +605,7 @@ namespace Kursovic
                 panel1.Show();
                 SQL = "SELECT idDriver FROM gibddmodern.drivers WHERE Surname = '" + textBox10.Text + "' AND Name = '" + textBox9.Text + "' AND MiddleName = '" + textBox8.Text + "' AND  DriverIsLicenseNumber = '" + maskedTextBox4.Text + "';";
                 MySQL(SQL, 1);
-                if (IDD == 0)
-                {
-                    MessageBox.Show("Запись не найдена", "Внимание!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if (IDD == 0) MessageBox.Show("Запись не найдена", "Внимание!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     SQL = "SELECT COUNT(*) FROM gibddmodern.storingnumbers WHERE IdDriver = " + IDD + ";";
@@ -595,10 +620,7 @@ namespace Kursovic
                             do
                             {
                                 Counter++;
-                                if (Counter == 2)
-                                {
-                                    break;
-                                }
+                                if (Counter == 2) break;
                                 SQL = "SELECT Number FROM gibddmodern.storingnumbers WHERE IdDriver = " + IDD + " LIMIT " + Counter + ", 1 ;";
                                 MySQL(SQL, 6);
                                 DNumber = MessageBox.Show("Номер: " + Number + ". Хотите им воспользоваться?", "Хранимый номер", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -614,20 +636,11 @@ namespace Kursovic
                                 MySQL(SQL, 20);
                                 NEW();
                             }
-                            else
-                            {
-                                NEW();
-                            }
+                            else NEW();
                         }
-                        else if (result == DialogResult.No)
-                        {
-                            NEW();
-                        }
+                        else if (result == DialogResult.No) NEW();
                     }
-                    else if (Count == 0)
-                    {
-                        NEW();
-                    }
+                    else if (Count == 0) NEW();
                 }
             }
             if (radioButton14.Checked)
@@ -692,6 +705,22 @@ namespace Kursovic
             }
         }
 
+        private void maskedTextBox7_TextChanged(object sender, EventArgs e)
+        {
+            if (radioButton12.Checked)
+            {
+                if (maskedTextBox7.MaskCompleted)
+                {
+                    if (textBox15.Text != string.Empty & textBox16.Text != string.Empty & textBox17.Text != string.Empty)
+                    {
+                        SQL = "SELECT DateofBirth, PlaceofBirth, PassportData, DateofIssueLicense, EndDateLicense, gibddmodern.category.Name AS Category FROM(gibddmodern.categorydriver INNER JOIN gibddmodern.category ON gibddmodern.categorydriver.IdCategory = gibddmodern.category.idCategory) INNER JOIN gibddmodern.drivers ON gibddmodern.categorydriver.idDriver = gibddmodern.drivers.idDriver WHERE gibddmodern.drivers.Surname = '"+textBox15.Text+ "' AND gibddmodern.drivers.Name = '"+textBox16.Text+ "' AND gibddmodern.drivers.MiddleName = '"+textBox17.Text+ "' AND gibddmodern.drivers.DriverIsLicenseNumber = '"+maskedTextBox7.Text+"';";
+                        MySQL(SQL, 9);
+                        button4.Enabled = true;
+                    }
+                    else MessageBox.Show("Некоторое поле не заполнено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -721,28 +750,24 @@ namespace Kursovic
 
         public bool Check() //Проверка заполнености номерных знаков
         {
-            if (textBox1.Text == "A000AA" & textBox2.Text == "47")
+            if (textBox1.Text == "А000АА" && textBox2.Text == "00")
             {
-                if (textBox1.Text == "A000AA")
+                if (textBox2.Text == "00")
                 {
-                    if (textBox2.Text == "47") { MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
-                    else { MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    if (textBox1.Text == "A000AA") { MessageBox.Show("Номерной знак не введен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    else { MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 }
-                else { MessageBox.Show("Не заполнена часть с регионом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                else { MessageBox.Show("Не заполнена часть с номером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             }
             else
             {
-                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{2,3}$");
-                if (myReg.IsMatch(textBox1.Text + textBox2.Text) == false)
-                {
-                    MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                Regex myReg = new Regex(@"^[АВСЕНКМОРТХУ]{1}[0-9]{3}[АВСЕНКМОРТХУ]{2}[0-9]{1}[1-9]{1,2}$");
+                if (myReg.IsMatch(textBox1.Text + textBox2.Text) == false) { MessageBox.Show("Номер не соответствует ГОСТу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             }
             return true;
         }
 
-        private void ADD_Categores()
+        private void ADD_Categores() //Метод для добавления категорий водителя;
         {
             if (checkBox1.Checked) Categores.Add(1);
             if (checkBox2.Checked) Categores.Add(2);
@@ -766,19 +791,13 @@ namespace Kursovic
         {
             SQL = "SELECT COUNT(*) FROM gibddmodern.cars WHERE Number ='"+textBox1.Text+textBox2.Text+"';";
             MySQL(SQL, 0);
-            if(Count != 0)
-            {
-                MessageBox.Show("Авто с таким номером состоит на учете", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            if(Count != 0) MessageBox.Show("Авто с таким номером состоит на учете", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 Count = 0;
                 SQL = "SELECT COUNT(*) FROM (gibddmodern.categorydriver INNER JOIN gibddmodern.drivers ON gibddmodern.categorydriver.idDriver = gibddmodern.drivers.idDriver) INNER JOIN gibddmodern.category ON gibddmodern.categorydriver.IdCategory = gibddmodern.category.idCategory WHERE DriverIsLicenseNumber = "+maskedTextBox4.Text+" AND gibddmodern.category.Name = '"+comboBox1.SelectedItem+"';";
                 MySQL(SQL, 0);
-                if(Count == 0)
-                {
-                    MessageBox.Show("У водителя нет нужной категории прав", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if(Count == 0) MessageBox.Show("У водителя нет нужной категории прав", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     SQL = "SELECT COUNT(*) FROM gibddmodern.cars";
@@ -786,6 +805,7 @@ namespace Kursovic
                     Count++;
                     SQL = "call gibddmodern.New_Car("+Count+","+maskedTextBox4.Text+",'"+textBox11.Text+"', '"+textBox12.Text+"','"+comboBox1.SelectedItem+"','"+textBox1.Text+textBox2.Text+"','"+maskedTextBox1.Text+"','"+maskedTextBox2.Text+"','"+maskedTextBox3.Text+"','"+textBox13.Text+"', '"+ dateTimePicker3.Value.ToString("yyyy-MM-dd") + "', '" + dateTimePicker5.Value.ToString("yyyy-MM-dd")+"', '"+textBox14.Text+"');";
                     MySQL(SQL, 20);
+                    Cleaner();
                     MessageBox.Show("Запись успешно добавлена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -793,10 +813,24 @@ namespace Kursovic
 
         private void Cleaner() //Метод для очистки всех полей
         {
-            textBox1.ForeColor = System.Drawing.Color.Gray;
-            textBox2.ForeColor = System.Drawing.Color.Gray;
             textBox1.Text = "А000АА";
-            textBox2.Text = "47";
+            textBox2.Text = "00";
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
+            checkBox6.Checked = false;
+            checkBox7.Checked = false;
+            checkBox8.Checked = false;
+            checkBox9.Checked = false;
+            checkBox10.Checked = false;
+            checkBox11.Checked = false;
+            checkBox12.Checked = false;
+            checkBox13.Checked = false;
+            checkBox14.Checked = false;
+            checkBox15.Checked = false;
+            checkBox16.Checked = false;
             textBox3.Text = string.Empty;
             textBox4.Text = string.Empty;
             textBox5.Text = string.Empty;
@@ -831,6 +865,16 @@ namespace Kursovic
             dateTimePicker7.Text = string.Empty;
             dateTimePicker8.Text = string.Empty;
             dateTimePicker9.Text = string.Empty;
+            textBox1.ForeColor = System.Drawing.Color.Gray;
+            textBox2.ForeColor = System.Drawing.Color.Gray;
+        }
+
+        private void Metod()
+        {
+            Hiden();
+            Shower();
+            Cleaner();
+            No_Checked();
         }
 
         private void Hiden() //Убирает все нанели
@@ -846,19 +890,17 @@ namespace Kursovic
 
         private void Shower() //Показывает определенные radiobuttons 
         {
+            panel6.Show();
             radioButton9.Show();
             radioButton12.Show();
-            radioButton14.Show();
             radioButton13.Show();
+            radioButton14.Show();
             if(radioButton5.Checked)
             {
                 radioButton12.Hide();
                 radioButton13.Hide();
             }
-            if(radioButton4.Checked)
-            {
-                radioButton13.Hide();
-            }
+            if(radioButton4.Checked || radioButton2.Checked) radioButton13.Hide();
         }
 
         private void No_Checked() //Убирает checked с radiobuttons на панеле №6
@@ -909,10 +951,7 @@ namespace Kursovic
                 case 4:
                     while(reader.Read())
                     {
-                        if(radioButton14.Checked)
-                        {
-                            maskedTextBox1.Text = reader["BodyNumber"].ToString();
-                        }
+                        if(radioButton14.Checked) maskedTextBox1.Text = reader["BodyNumber"].ToString();
                         Number = reader["Number"].ToString();
                         textBox10.Text = reader["Surname"].ToString();
                         textBox9.Text = reader["Name"].ToString();
@@ -967,13 +1006,16 @@ namespace Kursovic
                 case 9:
                     while (reader.Read())
                     {
-                        textBox15.Text = reader["Surname"].ToString();
-                        textBox16.Text = reader["Name"].ToString();
-                        textBox17.Text = reader["MiddleName"].ToString();
+                        if(radioButton14.Checked)
+                        {
+                            textBox15.Text = reader["Surname"].ToString();
+                            textBox16.Text = reader["Name"].ToString();
+                            textBox17.Text = reader["MiddleName"].ToString();
+                            maskedTextBox7.Text = reader["DriverIsLicenseNumber"].ToString();
+                        }
                         textBox18.Text = reader["PlaceofBirth"].ToString();
                         textBox19.Text += reader["Category"].ToString() + ". ";
                         maskedTextBox6.Text = reader["PassportData"].ToString();
-                        maskedTextBox7.Text = reader["DriverIsLicenseNumber"].ToString();
                         dateTimePicker7.Value = Convert.ToDateTime(reader["DateofBirth"]);
                         dateTimePicker8.Value = Convert.ToDateTime(reader["DateofIssueLicense"]);
                         dateTimePicker9.Value = Convert.ToDateTime(reader["EndDateLicense"]);

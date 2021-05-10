@@ -60,17 +60,6 @@ namespace Kursovic
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -103,7 +92,46 @@ namespace Kursovic
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.label32 = new System.Windows.Forms.Label();
+            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -114,44 +142,15 @@ namespace Kursovic
             this.radioButton13 = new System.Windows.Forms.RadioButton();
             this.radioButton14 = new System.Windows.Forms.RadioButton();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -184,6 +183,7 @@ namespace Kursovic
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(337, 78);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "А000АА";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click_1);
             // 
@@ -191,13 +191,14 @@ namespace Kursovic
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(373, 38);
+            this.textBox2.Location = new System.Drawing.Point(376, 38);
             this.textBox2.MaxLength = 3;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 59);
+            this.textBox2.Size = new System.Drawing.Size(97, 59);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = " 47";
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "00";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click_1);
             // 
             // pictureBox1
@@ -470,116 +471,6 @@ namespace Kursovic
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(776, 262);
             this.panel4.TabIndex = 11;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.textBox19);
-            this.panel7.Controls.Add(this.label35);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.button5);
-            this.panel7.Controls.Add(this.button4);
-            this.panel7.Controls.Add(this.dateTimePicker9);
-            this.panel7.Controls.Add(this.label34);
-            this.panel7.Controls.Add(this.label33);
-            this.panel7.Controls.Add(this.dateTimePicker8);
-            this.panel7.Controls.Add(this.label32);
-            this.panel7.Controls.Add(this.maskedTextBox7);
-            this.panel7.Controls.Add(this.label31);
-            this.panel7.Controls.Add(this.maskedTextBox6);
-            this.panel7.Controls.Add(this.label30);
-            this.panel7.Controls.Add(this.textBox18);
-            this.panel7.Controls.Add(this.label29);
-            this.panel7.Controls.Add(this.dateTimePicker7);
-            this.panel7.Controls.Add(this.textBox17);
-            this.panel7.Controls.Add(this.label28);
-            this.panel7.Controls.Add(this.textBox16);
-            this.panel7.Controls.Add(this.label27);
-            this.panel7.Controls.Add(this.label26);
-            this.panel7.Controls.Add(this.textBox15);
-            this.panel7.Location = new System.Drawing.Point(12, 153);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(776, 266);
-            this.panel7.TabIndex = 19;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(534, 6);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(121, 17);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "Город рождения:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(537, 26);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(151, 22);
-            this.textBox18.TabIndex = 8;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(354, 6);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(115, 17);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "Дата рождения:";
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.Location = new System.Drawing.Point(357, 26);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(174, 22);
-            this.dateTimePicker7.TabIndex = 6;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(240, 26);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(111, 22);
-            this.textBox17.TabIndex = 5;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(237, 6);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(75, 17);
-            this.label28.TabIndex = 4;
-            this.label28.Text = "Отчество:";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(123, 26);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(111, 22);
-            this.textBox16.TabIndex = 3;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(120, 6);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 17);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "Имя:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 6);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 17);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Фамилия:";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(6, 26);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(111, 22);
-            this.textBox15.TabIndex = 0;
             // 
             // maskedTextBox4
             // 
@@ -864,22 +755,406 @@ namespace Kursovic
             this.textBox10.Size = new System.Drawing.Size(138, 22);
             this.textBox10.TabIndex = 9;
             // 
-            // radioButton1
+            // panel7
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(107, 21);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cотрудники";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.panel7.Controls.Add(this.textBox19);
+            this.panel7.Controls.Add(this.label35);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.button5);
+            this.panel7.Controls.Add(this.button4);
+            this.panel7.Controls.Add(this.dateTimePicker9);
+            this.panel7.Controls.Add(this.label34);
+            this.panel7.Controls.Add(this.label33);
+            this.panel7.Controls.Add(this.dateTimePicker8);
+            this.panel7.Controls.Add(this.label32);
+            this.panel7.Controls.Add(this.maskedTextBox7);
+            this.panel7.Controls.Add(this.label31);
+            this.panel7.Controls.Add(this.maskedTextBox6);
+            this.panel7.Controls.Add(this.label30);
+            this.panel7.Controls.Add(this.textBox18);
+            this.panel7.Controls.Add(this.label29);
+            this.panel7.Controls.Add(this.dateTimePicker7);
+            this.panel7.Controls.Add(this.textBox17);
+            this.panel7.Controls.Add(this.label28);
+            this.panel7.Controls.Add(this.textBox16);
+            this.panel7.Controls.Add(this.label27);
+            this.panel7.Controls.Add(this.label26);
+            this.panel7.Controls.Add(this.textBox15);
+            this.panel7.Location = new System.Drawing.Point(12, 153);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(776, 266);
+            this.panel7.TabIndex = 19;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(376, 120);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(174, 22);
+            this.textBox19.TabIndex = 38;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(373, 100);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(81, 17);
+            this.label35.TabIndex = 37;
+            this.label35.Text = "Категории:";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.checkBox6);
+            this.panel8.Controls.Add(this.checkBox16);
+            this.panel8.Controls.Add(this.checkBox1);
+            this.panel8.Controls.Add(this.checkBox15);
+            this.panel8.Controls.Add(this.checkBox2);
+            this.panel8.Controls.Add(this.checkBox14);
+            this.panel8.Controls.Add(this.checkBox3);
+            this.panel8.Controls.Add(this.checkBox13);
+            this.panel8.Controls.Add(this.checkBox4);
+            this.panel8.Controls.Add(this.checkBox12);
+            this.panel8.Controls.Add(this.checkBox5);
+            this.panel8.Controls.Add(this.checkBox11);
+            this.panel8.Controls.Add(this.checkBox7);
+            this.panel8.Controls.Add(this.checkBox10);
+            this.panel8.Controls.Add(this.checkBox8);
+            this.panel8.Controls.Add(this.checkBox9);
+            this.panel8.Location = new System.Drawing.Point(6, 128);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(241, 134);
+            this.panel8.TabIndex = 36;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(70, 45);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(48, 21);
+            this.checkBox6.TabIndex = 25;
+            this.checkBox6.Text = "BE";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(180, 97);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(49, 21);
+            this.checkBox16.TabIndex = 35;
+            this.checkBox16.Text = "DE";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(15, 18);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(41, 21);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "M";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(180, 72);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(40, 21);
+            this.checkBox15.TabIndex = 34;
+            this.checkBox15.Text = "D";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(15, 45);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(47, 21);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.Text = "A1";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(180, 45);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(57, 21);
+            this.checkBox14.TabIndex = 33;
+            this.checkBox14.Text = "D1E";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(15, 72);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(39, 21);
+            this.checkBox3.TabIndex = 22;
+            this.checkBox3.Text = "A";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Location = new System.Drawing.Point(180, 18);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(48, 21);
+            this.checkBox13.TabIndex = 32;
+            this.checkBox13.Text = "D1";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(15, 97);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(47, 21);
+            this.checkBox4.TabIndex = 23;
+            this.checkBox4.Text = "B1";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(125, 97);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(48, 21);
+            this.checkBox12.TabIndex = 31;
+            this.checkBox12.Text = "CE";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(70, 18);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(39, 21);
+            this.checkBox5.TabIndex = 24;
+            this.checkBox5.Text = "B";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(125, 72);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(39, 21);
+            this.checkBox11.TabIndex = 30;
+            this.checkBox11.Text = "C";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(70, 71);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(48, 21);
+            this.checkBox7.TabIndex = 26;
+            this.checkBox7.Text = "TB";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(125, 45);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(56, 21);
+            this.checkBox10.TabIndex = 29;
+            this.checkBox10.Text = "C1E";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(70, 98);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(50, 21);
+            this.checkBox8.TabIndex = 27;
+            this.checkBox8.Text = "TM";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(125, 18);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(47, 21);
+            this.checkBox9.TabIndex = 28;
+            this.checkBox9.Text = "C1";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(516, 199);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(124, 55);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Назад";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(646, 199);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(124, 56);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Добавить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dateTimePicker9
+            // 
+            this.dateTimePicker9.Location = new System.Drawing.Point(556, 69);
+            this.dateTimePicker9.Name = "dateTimePicker9";
+            this.dateTimePicker9.Size = new System.Drawing.Size(174, 22);
+            this.dateTimePicker9.TabIndex = 17;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(553, 51);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(121, 17);
+            this.label34.TabIndex = 16;
+            this.label34.Text = "Дата окончания:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(373, 51);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(99, 17);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "Дата выдачи:";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Location = new System.Drawing.Point(376, 69);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(174, 22);
+            this.dateTimePicker8.TabIndex = 14;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(158, 51);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(209, 17);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "Водительское удостоверение:";
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.Location = new System.Drawing.Point(161, 71);
+            this.maskedTextBox7.Mask = "000000000";
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(110, 22);
+            this.maskedTextBox7.TabIndex = 12;
+            this.maskedTextBox7.TextChanged += new System.EventHandler(this.maskedTextBox7_TextChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(4, 51);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(148, 17);
+            this.label31.TabIndex = 11;
+            this.label31.Text = "Паспортные данные:";
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.Location = new System.Drawing.Point(6, 71);
+            this.maskedTextBox6.Mask = "000000000";
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(110, 22);
+            this.maskedTextBox6.TabIndex = 10;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(534, 6);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(121, 17);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "Город рождения:";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(537, 26);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(151, 22);
+            this.textBox18.TabIndex = 8;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(354, 6);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(115, 17);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Дата рождения:";
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Location = new System.Drawing.Point(357, 26);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(174, 22);
+            this.dateTimePicker7.TabIndex = 6;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(240, 26);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(111, 22);
+            this.textBox17.TabIndex = 5;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(237, 6);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(75, 17);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Отчество:";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(123, 26);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(111, 22);
+            this.textBox16.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(120, 6);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 17);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Имя:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 6);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(74, 17);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Фамилия:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(6, 26);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(111, 22);
+            this.textBox15.TabIndex = 0;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(3, 30);
+            this.radioButton2.Location = new System.Drawing.Point(3, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(93, 21);
             this.radioButton2.TabIndex = 13;
@@ -891,7 +1166,7 @@ namespace Kursovic
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(3, 57);
+            this.radioButton3.Location = new System.Drawing.Point(3, 30);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(109, 21);
             this.radioButton3.TabIndex = 14;
@@ -903,7 +1178,7 @@ namespace Kursovic
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(3, 84);
+            this.radioButton4.Location = new System.Drawing.Point(3, 57);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(127, 21);
             this.radioButton4.TabIndex = 15;
@@ -915,7 +1190,7 @@ namespace Kursovic
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(3, 111);
+            this.radioButton5.Location = new System.Drawing.Point(3, 84);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(154, 21);
             this.radioButton5.TabIndex = 16;
@@ -928,7 +1203,6 @@ namespace Kursovic
             // 
             this.panel5.Controls.Add(this.radioButton4);
             this.panel5.Controls.Add(this.radioButton5);
-            this.panel5.Controls.Add(this.radioButton1);
             this.panel5.Controls.Add(this.radioButton2);
             this.panel5.Controls.Add(this.radioButton3);
             this.panel5.Location = new System.Drawing.Point(642, 12);
@@ -975,7 +1249,7 @@ namespace Kursovic
             // radioButton14
             // 
             this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(2, 30);
+            this.radioButton14.Location = new System.Drawing.Point(3, 30);
             this.radioButton14.Name = "radioButton14";
             this.radioButton14.Size = new System.Drawing.Size(94, 21);
             this.radioButton14.TabIndex = 46;
@@ -994,291 +1268,6 @@ namespace Kursovic
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(110, 139);
             this.panel6.TabIndex = 18;
-            // 
-            // maskedTextBox6
-            // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(6, 71);
-            this.maskedTextBox6.Mask = "000000000";
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(110, 22);
-            this.maskedTextBox6.TabIndex = 10;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(4, 51);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(148, 17);
-            this.label31.TabIndex = 11;
-            this.label31.Text = "Паспортные данные:";
-            // 
-            // maskedTextBox7
-            // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(161, 71);
-            this.maskedTextBox7.Mask = "000000000";
-            this.maskedTextBox7.Name = "maskedTextBox7";
-            this.maskedTextBox7.Size = new System.Drawing.Size(110, 22);
-            this.maskedTextBox7.TabIndex = 12;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(158, 51);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(209, 17);
-            this.label32.TabIndex = 13;
-            this.label32.Text = "Водительское удостоверение:";
-            // 
-            // dateTimePicker8
-            // 
-            this.dateTimePicker8.Location = new System.Drawing.Point(376, 69);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(174, 22);
-            this.dateTimePicker8.TabIndex = 14;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(373, 51);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(99, 17);
-            this.label33.TabIndex = 15;
-            this.label33.Text = "Дата выдачи:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(553, 51);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(121, 17);
-            this.label34.TabIndex = 16;
-            this.label34.Text = "Дата окончания:";
-            // 
-            // dateTimePicker9
-            // 
-            this.dateTimePicker9.Location = new System.Drawing.Point(556, 69);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.Size = new System.Drawing.Size(174, 22);
-            this.dateTimePicker9.TabIndex = 17;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(646, 199);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 56);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(516, 199);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 55);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Назад";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 18);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(41, 21);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "M";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(15, 45);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(47, 21);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "A1";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(15, 72);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(39, 21);
-            this.checkBox3.TabIndex = 22;
-            this.checkBox3.Text = "A";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(15, 97);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(47, 21);
-            this.checkBox4.TabIndex = 23;
-            this.checkBox4.Text = "B1";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(70, 18);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(39, 21);
-            this.checkBox5.TabIndex = 24;
-            this.checkBox5.Text = "B";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(70, 45);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(48, 21);
-            this.checkBox6.TabIndex = 25;
-            this.checkBox6.Text = "BE";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(70, 71);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(48, 21);
-            this.checkBox7.TabIndex = 26;
-            this.checkBox7.Text = "TB";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(70, 98);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(50, 21);
-            this.checkBox8.TabIndex = 27;
-            this.checkBox8.Text = "TM";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(125, 18);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(47, 21);
-            this.checkBox9.TabIndex = 28;
-            this.checkBox9.Text = "C1";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(125, 45);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(56, 21);
-            this.checkBox10.TabIndex = 29;
-            this.checkBox10.Text = "C1E";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(125, 72);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(39, 21);
-            this.checkBox11.TabIndex = 30;
-            this.checkBox11.Text = "C";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(125, 97);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(48, 21);
-            this.checkBox12.TabIndex = 31;
-            this.checkBox12.Text = "CE";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(180, 18);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(48, 21);
-            this.checkBox13.TabIndex = 32;
-            this.checkBox13.Text = "D1";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(180, 45);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(57, 21);
-            this.checkBox14.TabIndex = 33;
-            this.checkBox14.Text = "D1E";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(180, 72);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(40, 21);
-            this.checkBox15.TabIndex = 34;
-            this.checkBox15.Text = "D";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(180, 97);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(49, 21);
-            this.checkBox16.TabIndex = 35;
-            this.checkBox16.Text = "DE";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.checkBox6);
-            this.panel8.Controls.Add(this.checkBox16);
-            this.panel8.Controls.Add(this.checkBox1);
-            this.panel8.Controls.Add(this.checkBox15);
-            this.panel8.Controls.Add(this.checkBox2);
-            this.panel8.Controls.Add(this.checkBox14);
-            this.panel8.Controls.Add(this.checkBox3);
-            this.panel8.Controls.Add(this.checkBox13);
-            this.panel8.Controls.Add(this.checkBox4);
-            this.panel8.Controls.Add(this.checkBox12);
-            this.panel8.Controls.Add(this.checkBox5);
-            this.panel8.Controls.Add(this.checkBox11);
-            this.panel8.Controls.Add(this.checkBox7);
-            this.panel8.Controls.Add(this.checkBox10);
-            this.panel8.Controls.Add(this.checkBox8);
-            this.panel8.Controls.Add(this.checkBox9);
-            this.panel8.Location = new System.Drawing.Point(6, 128);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(241, 134);
-            this.panel8.TabIndex = 36;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(373, 100);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(81, 17);
-            this.label35.TabIndex = 37;
-            this.label35.Text = "Категории:";
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(376, 120);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(174, 22);
-            this.textBox19.TabIndex = 38;
             // 
             // Form4
             // 
@@ -1307,12 +1296,12 @@ namespace Kursovic
             this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1366,7 +1355,6 @@ namespace Kursovic
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
