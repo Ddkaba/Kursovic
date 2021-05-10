@@ -59,6 +59,7 @@ namespace Kursovic
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(564, 393);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 45);
@@ -72,7 +73,7 @@ namespace Kursovic
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Логин:";
             // 
@@ -80,7 +81,7 @@ namespace Kursovic
             // 
             this.textBox1.Location = new System.Drawing.Point(6, 40);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 2;
             // 
             // label2
@@ -88,7 +89,7 @@ namespace Kursovic
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль:";
             // 
@@ -97,14 +98,15 @@ namespace Kursovic
             this.textBox2.Location = new System.Drawing.Point(6, 85);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(100, 25);
             this.textBox2.TabIndex = 4;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 393);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(12, 385);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 45);
+            this.button2.Size = new System.Drawing.Size(133, 53);
             this.button2.TabIndex = 5;
             this.button2.Text = "Регистрация в системе";
             this.button2.UseVisualStyleBackColor = true;
@@ -116,6 +118,7 @@ namespace Kursovic
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(12, 173);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(145, 129);
@@ -127,6 +130,7 @@ namespace Kursovic
             // 
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(163, 173);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(273, 265);
@@ -151,7 +155,7 @@ namespace Kursovic
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 17);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Пароль:";
             // 
@@ -160,7 +164,7 @@ namespace Kursovic
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 17);
+            this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Логин:";
             // 
@@ -168,14 +172,14 @@ namespace Kursovic
             // 
             this.textBox4.Location = new System.Drawing.Point(4, 69);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.Size = new System.Drawing.Size(100, 25);
             this.textBox4.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(4, 24);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.Size = new System.Drawing.Size(100, 25);
             this.textBox3.TabIndex = 1;
             // 
             // button5
@@ -204,7 +208,7 @@ namespace Kursovic
             this.maskedTextBox1.Location = new System.Drawing.Point(4, 29);
             this.maskedTextBox1.Mask = "000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(124, 22);
+            this.maskedTextBox1.Size = new System.Drawing.Size(124, 25);
             this.maskedTextBox1.TabIndex = 3;
             // 
             // label3
@@ -212,7 +216,7 @@ namespace Kursovic
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 17);
+            this.label3.Size = new System.Drawing.Size(166, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Введите номер паспорта:";
             // 
@@ -250,7 +254,7 @@ namespace Kursovic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(709, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);

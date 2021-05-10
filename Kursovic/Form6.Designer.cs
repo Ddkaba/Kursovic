@@ -95,7 +95,7 @@ namespace Kursovic
             this.panel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel6.Location = new System.Drawing.Point(12, 12);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(121, 139);
+            this.panel6.Size = new System.Drawing.Size(121, 115);
             this.panel6.TabIndex = 19;
             // 
             // radioButton13
@@ -235,9 +235,12 @@ namespace Kursovic
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(549, 42);
+            this.dateTimePicker1.MaxDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(165, 22);
             this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.Value = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -286,6 +289,7 @@ namespace Kursovic
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(125, 22);
             this.maskedTextBox1.TabIndex = 37;
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
             // 
             // maskedTextBox2
             // 
@@ -294,7 +298,6 @@ namespace Kursovic
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(122, 22);
             this.maskedTextBox2.TabIndex = 38;
-            this.maskedTextBox2.TextChanged += new System.EventHandler(this.maskedTextBox2_TextChanged);
             // 
             // label8
             // 
@@ -319,6 +322,8 @@ namespace Kursovic
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(424, 151);
+            this.dateTimePicker2.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(2011, 5, 11, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
             this.dateTimePicker2.TabIndex = 41;
@@ -326,6 +331,8 @@ namespace Kursovic
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(596, 151);
+            this.dateTimePicker3.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker3.MinDate = new System.DateTime(2011, 5, 11, 0, 0, 0, 0);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(167, 22);
             this.dateTimePicker3.TabIndex = 42;
@@ -419,7 +426,7 @@ namespace Kursovic
             this.panel8.Controls.Add(this.checkBox8);
             this.panel8.Controls.Add(this.checkBox9);
             this.panel8.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.panel8.Location = new System.Drawing.Point(153, 251);
+            this.panel8.Location = new System.Drawing.Point(165, 251);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(290, 135);
             this.panel8.TabIndex = 53;

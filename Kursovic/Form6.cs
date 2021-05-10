@@ -18,7 +18,7 @@ namespace Kursovic
             InitializeComponent();
         }
 
-        int Count,Counter;
+        int Count,Counter,IDD;
         string SQL;
         List<int> Categores = new List<int>();
 
@@ -44,7 +44,12 @@ namespace Kursovic
         {
             if (radioButton9.Checked)
             {
-                Cleaner();
+                bool Check = Checker();
+                if(Check == true)
+                {
+                    if(maskedTextBox2.MaskCompleted) panel8.Show();
+
+                }
             }
             if (radioButton14.Checked)
             {
@@ -63,7 +68,18 @@ namespace Kursovic
             }
             if (radioButton12.Checked)
             {
-
+                DialogResult result = MessageBox.Show("Вы точно хотите удалить запись?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    SQL = "SELECT idEmployee AS IdDriver FROM gibddmodern.employees WHERE PassportData = '" + maskedTextBox1.Text + "';";
+                    MySQL(SQL, 3);
+                    SQL = "DELETE FROM gibddmodern.categotyemployee WHERE IdEmployee = '" + IDD + "';";
+                    MySQL(SQL, 20);
+                    SQL = "DELETE FROM gibddmodern.employees WHERE idEmployee = '" + IDD + "';";
+                    MySQL(SQL, 20);
+                    MessageBox.Show("Запись успешно удалена", "Удачно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Cleaner();
+                }
             }
             if (radioButton13.Checked)
             {
@@ -90,7 +106,6 @@ namespace Kursovic
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
             Cleaner();
-            panel8.Show();
             button2.Show();
             button3.Hide();
             label14.Hide();
@@ -173,8 +188,8 @@ namespace Kursovic
             textBox5.Enabled = false;
             textBox6.Enabled = false;
             textBox8.Enabled = false; 
-            maskedTextBox1.Enabled = false;
-            maskedTextBox2.Enabled = true;
+            maskedTextBox1.Enabled = true;
+            maskedTextBox2.Enabled = false;
             maskedTextBox3.Enabled = false;
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
@@ -197,21 +212,62 @@ namespace Kursovic
             button2.Text = "Изменить";
         }
 
-        private void maskedTextBox2_TextChanged(object sender, EventArgs e)
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
             if (radioButton12.Checked)
             {
-                if (maskedTextBox2.MaskCompleted)
+                if (maskedTextBox1.MaskCompleted)
                 {
                     if (textBox1.Text != string.Empty & textBox2.Text != string.Empty & textBox3.Text != string.Empty)
                     {
-                        //SQL = "";
-                        //MySQL(SQL, 3);
+                        SQL = "SELECT DateOfBirth, Sex, NameRank, NamePosition, DriversLicenseNumber, DateofIssueLicense, EndDateLicense, Address, gibddmodern.employees.Number FROM(gibddmodern.employees INNER JOIN gibddmodern.positions ON gibddmodern.employees.idPosition = gibddmodern.positions.idPosition) INNER JOIN gibddmodern.rank ON gibddmodern.employees.idRank = gibddmodern.rank.idRank WHERE Surname = '" + textBox1.Text + "' AND Name = '" + textBox2.Text + "' AND MiddleName = '" + textBox3.Text + "' AND PassportData = '" + maskedTextBox1.Text + "';";
+                        MySQL(SQL, 1);
                         button2.Enabled = true;
                     }
                     else MessageBox.Show("Некоторое поле не заполнено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private bool Checker()
+        {
+            if (textBox1.Text != string.Empty)
+            {
+                if (textBox2.Text != string.Empty)
+                {
+                    if (textBox3.Text != string.Empty)
+                    {
+                        if (textBox4.Text != string.Empty)
+                        {
+                            if (textBox5.Text != string.Empty)
+                            {
+                                if (textBox6.Text != string.Empty)
+                                {
+                                    if (maskedTextBox1.MaskCompleted)
+                                    {
+                                        if (maskedTextBox3.MaskCompleted)
+                                        {
+                                            if (textBox8.Text != string.Empty)
+                                            {
+                                                return true;
+                                            }
+                                            else { MessageBox.Show("Не заполнено поле Адрес", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                                        }
+                                        else { MessageBox.Show("Не заполнено поле Телефон", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                                    }
+                                    else { MessageBox.Show("Не заполнено поле Паспорт", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                                }
+                                else { MessageBox.Show("Не заполнено поле Звание", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                            }
+                            else { MessageBox.Show("Не заполнено поле Позиция", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                        }
+                        else { MessageBox.Show("Не заполнено поле Пол", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                    }
+                    else { MessageBox.Show("Не заполнено поле Отчество", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                }
+                else { MessageBox.Show("Не заполнено поле Имя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+            }
+            else { MessageBox.Show("Не заполнено поле Фамилия", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
         }
 
         private void Cleaner()
@@ -281,14 +337,17 @@ namespace Kursovic
                 case 1:
                     while(reader.Read())
                     {
-                        textBox1.Text = reader["Surname"].ToString();
-                        textBox2.Text = reader["Name"].ToString();
-                        textBox3.Text = reader["MiddleName"].ToString();
+                        if(radioButton14.Checked)
+                        {
+                            textBox1.Text = reader["Surname"].ToString();
+                            textBox2.Text = reader["Name"].ToString();
+                            textBox3.Text = reader["MiddleName"].ToString();
+                            maskedTextBox1.Text = reader["PassportData"].ToString();
+                        }
                         dateTimePicker1.Value = Convert.ToDateTime(reader["DateofBirth"]);
                         textBox4.Text = reader["Sex"].ToString();
                         textBox5.Text = reader["NamePosition"].ToString();
                         textBox6.Text = reader["NameRank"].ToString();
-                        maskedTextBox1.Text = reader["PassportData"].ToString();
                         maskedTextBox2.Text = reader["DriversLicenseNumber"].ToString();
                         if(reader["DateofIssueLicense"].ToString() == "") dateTimePicker2.Text = string.Empty;
                         else dateTimePicker2.Value = Convert.ToDateTime(reader["DateofIssueLicense"]);
@@ -300,6 +359,9 @@ namespace Kursovic
                     break;
                 case 2:
                     while(reader.Read()) textBox7.Text += reader["Category"].ToString() + ". ";
+                    break;
+                case 3:
+                    while (reader.Read()) IDD = Convert.ToInt32(reader["IdDriver"]);
                     break;
             }
         }

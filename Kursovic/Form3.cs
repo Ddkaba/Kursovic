@@ -104,6 +104,13 @@ namespace Kursovic
             else button3.Enabled = false;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
         private void textBox1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";

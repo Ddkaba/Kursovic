@@ -132,6 +132,13 @@ namespace Kursovic
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
         public bool Check() //Для проверки заполненности полей
         {
             if (textBox1.Text == "А000АА" && textBox2.Text == "00")

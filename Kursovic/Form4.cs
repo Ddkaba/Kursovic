@@ -88,7 +88,6 @@ namespace Kursovic
                 maskedTextBox7.Enabled = true;
                 dateTimePicker7.Enabled = true;
                 dateTimePicker8.Enabled = true;
-
             }
             if (radioButton3.Checked) //Переключатель для добавления машин на учет
             {
@@ -395,6 +394,10 @@ namespace Kursovic
                 textBox1.ForeColor = System.Drawing.Color.Black;
                 textBox2.ForeColor = System.Drawing.Color.Black;
             }
+            if(radioButton2.Checked)
+            {
+                button4.Text = "Изменить";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e) //Кнопка НАЗАД для просмотра штрафстоянки
@@ -508,6 +511,13 @@ namespace Kursovic
                 }
                 else button5.Enabled = false;
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e) //Кнопка добавления хранимых номеров, и кнопка ВПЕРЕД для просмотра
@@ -701,7 +711,6 @@ namespace Kursovic
                     dateTimePicker4.Enabled = true;
                     dateTimePicker5.Enabled = true;
                 }
-
             }
         }
 
