@@ -39,8 +39,6 @@ namespace Kursovic
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,6 +80,8 @@ namespace Kursovic
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -180,20 +180,6 @@ namespace Kursovic
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(122, 22);
             this.textBox4.TabIndex = 24;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(293, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(297, 22);
-            this.textBox5.TabIndex = 25;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(596, 96);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(153, 22);
-            this.textBox6.TabIndex = 26;
             // 
             // textBox8
             // 
@@ -298,6 +284,7 @@ namespace Kursovic
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(122, 22);
             this.maskedTextBox2.TabIndex = 38;
+            this.maskedTextBox2.TextChanged += new System.EventHandler(this.maskedTextBox2_TextChanged);
             // 
             // label8
             // 
@@ -608,12 +595,63 @@ namespace Kursovic
             this.label14.TabIndex = 55;
             this.label14.Text = "Категории";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Инспектор дорожно-патрульной службы",
+            "Государственный инспектор дорожного надзора",
+            "Инспектор по розыску",
+            "Старший инспектор дорожно-патрульной службы",
+            "Инспектор по проверке и выдаче документов ",
+            "Командир отделения строевого подразделения дорожно-патрульной службы",
+            "Старший государственный инспектор дорожного надзора",
+            "Старший инспектор по розыску",
+            "Заместитель командира взвода",
+            "Командир взвода",
+            "Начальник смены",
+            "Начальник контрольного поста милиции"});
+            this.comboBox1.Location = new System.Drawing.Point(293, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(297, 24);
+            this.comboBox1.TabIndex = 56;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Рядовой полиции",
+            "Младший сержант ",
+            "Сержант",
+            "Старший сержант",
+            "Старшина",
+            "Прапорщик",
+            "Старший прапорщик",
+            "Младший лейтенант ",
+            "Лейтенант",
+            "Старший лейтенант",
+            "Капитан",
+            "Майор",
+            "Подполковник",
+            "Полковник",
+            "Генерал-майор",
+            "Гейнерал-лейтенант",
+            "Генерал-полковник",
+            "Генерал"});
+            this.comboBox2.Location = new System.Drawing.Point(596, 96);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(167, 24);
+            this.comboBox2.TabIndex = 57;
+            this.comboBox2.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.panel8);
@@ -639,8 +677,6 @@ namespace Kursovic
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -671,8 +707,6 @@ namespace Kursovic
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -714,5 +748,7 @@ namespace Kursovic
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

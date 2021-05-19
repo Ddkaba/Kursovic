@@ -662,7 +662,6 @@ namespace Kursovic
             "A",
             "A1",
             "B",
-            "B1",
             "BE",
             "C",
             "C1",
@@ -671,10 +670,7 @@ namespace Kursovic
             "D",
             "D1",
             "D1E",
-            "DE",
-            "M",
-            "TB",
-            "TM"});
+            "DE"});
             this.comboBox1.Location = new System.Drawing.Point(294, 78);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 25);
@@ -1294,13 +1290,13 @@ namespace Kursovic
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(805, 485);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
             this.Name = "Form4";
             this.Text = "Документация";
             this.Load += new System.EventHandler(this.Form4_Load);

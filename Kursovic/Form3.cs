@@ -20,7 +20,7 @@ namespace Kursovic
             InitializeComponent();
         }
 
-        int Count, Counter, index;
+        int Count, Counter;
         string SQL, PN;
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -43,21 +43,18 @@ namespace Kursovic
                     Clear();
                     SQL = "SELECT PassportNumber FROM gibddmodern.cars WHERE Number = '" + textBox1.Text + textBox2.Text + "';";
                     MySQL(SQL, 2);
-                    if(PN == maskedTextBox1.Text)
+                    if (PN == maskedTextBox1.Text)
                     {
                         SQL = "SELECT COUNT(*) FROM protocols Where idCar = (Select idCar FROM gibddmodern.cars Where Number = '" + textBox1.Text + textBox2.Text + "' and PassportNumber = '" + maskedTextBox1.Text + "');";
                         MySQL(SQL, 1);
-                        if (textBox10.Text == "0")
-                        {
-                            MessageBox.Show("Штрафы не обнаружены", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        if (textBox10.Text == "0") MessageBox.Show("Штрафы не обнаружены", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
                         {
                             MessageBox.Show("Были обнаружены штрафы", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (Count == 1)
                             {
                                 SQL = "call gibddmodern.Found_Fine('" + textBox1.Text + textBox2.Text + "','" + maskedTextBox1.Text + "');";
-                                MySQL(SQL, index = 0);
+                                MySQL(SQL, 0);
                             }
                             if (Count > 1)
                             {
@@ -68,10 +65,7 @@ namespace Kursovic
                             }
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Машина с таким СТС и Номером не обнаружена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    else MessageBox.Show("Машина с таким СТС и Номером не обнаружена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -155,24 +149,15 @@ namespace Kursovic
                     }
                     break;
                 case 2:
-                    while(reader.Read())
-                    {
-                        PN = reader["PassportNumber"].ToString();
-                    }
+                    while(reader.Read()) PN = reader["PassportNumber"].ToString();
                     break;
             }
         }
 
         public void Clear() //Очистка всех полей
         {
-            textBox3.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            textBox5.Text = string.Empty;
-            textBox6.Text = string.Empty;
-            textBox7.Text = string.Empty;
-            textBox8.Text = string.Empty;
-            textBox9.Text = string.Empty;
-            textBox10.Text = string.Empty;
+            TextBox[] textBoxes = new TextBox[] {textBox3, textBox4, textBox5, textBox6, textBox7, textBox8, textBox9, textBox10 };
+            for (int i = 0; i < 8; i++) textBoxes[i].Text = string.Empty;
         }
 
         public bool Masked() //Проверка заполненности maskedtextbox1
