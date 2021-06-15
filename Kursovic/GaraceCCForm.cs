@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace Kursovic
 {
-    public partial class Form9 : Form
+    public partial class GaraceCCForm : Form
     {
-        public Form9()
+        public GaraceCCForm()
         {
             InitializeComponent();
         }
@@ -34,7 +34,7 @@ namespace Kursovic
 
         private void button1_Click(object sender, EventArgs e) //Кнопка для возвращения в меню
         {
-            Form form5 = new Form5();
+            Form form5 = new MenuForm();
             form5.Show();
             this.Hide();
         }

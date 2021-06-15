@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kursovic
 {
-    public partial class Form5 : Form
+    public partial class MenuForm : Form
     {
-        public Form5()
+        public MenuForm()
         {
             InitializeComponent();
         }
@@ -26,21 +26,21 @@ namespace Kursovic
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form form6 = new Form6();
+            Form form6 = new StaffForm();
             form6.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form form8 = new Form8();
+            Form form8 = new CrewsForm();
             form8.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form form9 = new Form9();
+            Form form9 = new GaraceCCForm();
             form9.Show();
             this.Hide();
         }

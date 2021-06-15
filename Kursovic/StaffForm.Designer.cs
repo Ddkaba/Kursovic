@@ -1,7 +1,7 @@
 ﻿
 namespace Kursovic
 {
-    partial class Form6
+    partial class StaffForm
     {
         /// <summary>
         /// Required designer variable.

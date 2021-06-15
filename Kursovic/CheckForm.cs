@@ -12,9 +12,9 @@ using System.Text.RegularExpressions;
 
 namespace Kursovic
 {
-    public partial class Form2 : Form
+    public partial class CheckForm : Form
     {
-        public Form2()
+        public CheckForm()
         {
             InitializeComponent();
         }
@@ -57,7 +57,7 @@ namespace Kursovic
         {
             if(radioButton3.Checked)
             {
-                Form form = new Form3();
+                Form form = new FineForm();
                 form.Show();
             }
         }

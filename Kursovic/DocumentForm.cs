@@ -12,9 +12,9 @@ using System.Text.RegularExpressions;
 
 namespace Kursovic
 {
-    public partial class Form4 : Form
+    public partial class DocumentForm : Form
     {
-        public Form4()
+        public DocumentForm()
         {
             InitializeComponent();
         }

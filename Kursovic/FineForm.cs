@@ -13,9 +13,9 @@ using System.Text.RegularExpressions;
 
 namespace Kursovic
 {
-    public partial class Form3 : Form
+    public partial class FineForm : Form
     {
-        public Form3()
+        public FineForm()
         {
             InitializeComponent();
         }

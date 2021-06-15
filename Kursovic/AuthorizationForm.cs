@@ -125,26 +125,26 @@ namespace Kursovic
                     MySQL(SQL, 1);
                     if(ID == 1 || ID == 2 || ID == 3 || ID == 4 || ID == 7 || ID == 8) 
                     {
-                        Form form2 = new Form2();
+                        Form form2 = new CheckForm();
                         form2.Show();
                         this.Hide();
                     }
                     if(ID == 5)
                     {
-                        Form form4 = new Form4();
+                        Form form4 = new DocumentForm();
                         form4.Show();
                         this.Hide();
                     }
                     if(ID == 6 || ID == 9 || ID == 10 || ID == 11 || ID == 12)
                     {
-                        Form form5 = new Form5();
+                        Form form5 = new MenuForm();
                         form5.Show();
                         this.Hide();
                     }
                 }    
                 if(Role == "Водитель")
                 {
-                    Form form3 = new Form3();
+                    Form form3 = new FineForm();
                     form3.Show();
                     this.Hide();
                 }    

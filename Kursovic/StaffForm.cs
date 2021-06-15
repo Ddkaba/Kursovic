@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Kursovic
 {
-    public partial class Form6 : Form
+    public partial class StaffForm : Form
     {
-        public Form6()
+        public StaffForm()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace Kursovic
 
         private void button1_Click(object sender, EventArgs e) //Кнопка для возвращения в меню
         {
-            Form form5 = new Form5();
+            Form form5 = new MenuForm();
             form5.Show();
             this.Hide();
         }

@@ -11,11 +11,11 @@ using MySql.Data.MySqlClient;
 
 namespace Kursovic
 {
-    public partial class Form8 : Form
+    public partial class CrewsForm : Form
     {
         int Count, Counter;
         string SQL;
-        public Form8()
+        public CrewsForm()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace Kursovic
 
         private void button1_Click(object sender, EventArgs e) //Кнопка для возвращения в меню
         {
-            Form form5 = new Form5();
+            Form form5 = new MenuForm();
             form5.Show();
             this.Hide();
         }

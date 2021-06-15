@@ -1,7 +1,7 @@
 ﻿
 namespace Kursovic
 {
-    partial class Form8
+    partial class CrewsForm
     {
         /// <summary>
         /// Required designer variable.

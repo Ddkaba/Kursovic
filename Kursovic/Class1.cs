@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,11 @@ namespace Kursovic
     class Connector
     {
 
-        MySqlConnection connection = null;
         MySqlDataReader reader = null;
         public void SQL(string sql)
         {
             string str = "server=localhost;user=root;password=2506Russia5002;database=gibddmodern;port=3306";
-            connection = new MySqlConnection(str);
+            MySqlConnection connection = new MySqlConnection(str);
             connection.Open();
             try
             {

@@ -1,7 +1,7 @@
 ﻿
 namespace Kursovic
 {
-    partial class Form9
+    partial class GaraceCCForm
     {
         /// <summary>
         /// Required designer variable.
